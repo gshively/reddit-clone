@@ -3,18 +3,36 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ArticleComponent } from './article/article.component';
+import { ArticleListComponent } from './article-list/article-list.component';
+
+import { ArticleService } from './article.service';
+import { ArticleListHeaderComponent } from './article-list-header/article-list-header.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidebarComponent,
+    ArticleComponent,
+    SidebarComponent,
+    ArticleComponent,
+    ArticleListComponent,
+    ArticleListHeaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    ArticleService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

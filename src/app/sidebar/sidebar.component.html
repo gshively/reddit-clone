@@ -1,0 +1,24 @@
+<div class="sidebar-container">
+  <div class="ui container visible fixed inverted left vertical sidebar menu">
+    <div class="item">
+      <div class="header">News sources</div>
+    </div>
+
+    <div class="item">
+      <div class="menu">
+        <a
+            routerLink="/news/{{ source['id'] }}"
+            routerLinkActive="active"
+            *ngFor='let source of sources | async'
+            class="item news-item">
+          <span class="side news-item">
+            <img src="{{ source['urlsToLogos']['small'] }}" class="ui avatar image">
+            <span class="side news-item">
+              {{ source['name'] }}
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
